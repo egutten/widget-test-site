@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Page</title>
+    <script src="http://localhost:9000/widget.js"></script>
+  </head>
+  
+  <body>
+    <h1>Buy the thing!</h1>
+    
+    <form action="index.html">
+      <div class="">
+        <label for="first-name">First Name</label>
+        <input type="text" name="first-name" >
+      </div>
+      
+      <div class="">
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last-name" >
+      </div>
+      
+      <div class="">
+        <label for="company-name">Company Name</label>
+        <input type="text" name="company-name" >
+      </div>
+      
+      <div class="">
+        <label for="email">Email</label>
+        <input type="email" name="email" >
+      </div>
+    
+      <button type="submit" name="button">Purchase</button>
+    </form>
+    
+    <script>
+      EmbeddableWidget.mount({
+        userId: 16
+      });
+      function getHttpRequest() {
+        var xhr = new XMLHttpRequest();
+        var formData  = new FormData(document.querySelector("form"));
+        xhr.open("PUT", 'http://localhost:8080/customer-update', true);
+        xhr.send(formData);
+      }
+      var $submit = document.querySelector("button[type='submit']");
+      $submit.addEventListener("click", function(){
+        getHttpRequest();
+      })
+    </script>
+    
+  </body>
+</html>
