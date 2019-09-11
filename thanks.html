@@ -3,19 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Thanks</title>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
     <script src="http://localhost:3030/conversion.js"></script>
     <script type="text/javascript">
-      var conversion_config = {
+      var customer_config = {
         email: "something@google.com",
         first_name: "Emily",
         last_name: "G",
         company_name: "Google"
       }
-      conversion.init(conversion_config);
+      conversion.updateCustomer(customer_config);
+      var activity_config = {
+        event: "conversion",
+        conversion_event_id: 1,
+        user_id: 16
+      }
+      conversion.updateActivity(activity_config);
     </script>
   </head>
   
