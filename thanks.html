@@ -6,16 +6,17 @@
     <script src="http://localhost:3030/conversion.js"></script>
     <script type="text/javascript">
       var customer_config = {
-        email: "something@google.com",
-        first_name: "Emily",
-        last_name: "G",
-        company_name: "Google"
+        email: "something@surveymonkey.com",
+        first_name: "Betty",
+        last_name: "Draper",
+        company_name: "Survey Monkey"
       }
       conversion.updateCustomer(customer_config);
+      
       var activity_config = {
         event: "conversion",
-        conversion_event_id: 1,
-        user_id: 16
+        // conversion_event_id: 2,
+        user_id: 45
       }
       conversion.updateActivity(activity_config);
     </script>
