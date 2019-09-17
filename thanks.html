@@ -5,20 +5,16 @@
     <title>Thanks</title>
     <script src="http://localhost:3030/conversion.js"></script>
     <script type="text/javascript">
-      var customer_config = {
+      var config = {
         email: "something@surveymonkey.com",
         first_name: "Betty",
         last_name: "Draper",
-        company_name: "Survey Monkey"
-      }
-      conversion.updateCustomer(customer_config);
-      
-      var activity_config = {
+        company_name: "Survey Monkey",
         event: "conversion",
         conversion_event_id: 7,
         user_id: 45
       }
-      conversion.updateActivity(activity_config);
+      conversion.convert(config);
     </script>
   </head>
   
