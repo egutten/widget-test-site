@@ -3,16 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Test Page</title>
-    <script src="http://localhost:9000/widget.js"></script>
-    <script>
-      EmbeddableWidget.mount({
-        userId: 45,
-        position: "right"
-      });
-    </script>
+    <!-- <script src="http://localhost:9000/widget.js"></script> -->
   </head>
   
-  <body>    
+  <body>   
+    <script>
+      var s = document.createElement('script'); s.src = "http://localhost:9000/widget.js"; s.id = "123456"; s.setAttribute('data-config', '[{"userId": 45, "position": "right"}]'); s.async = true; document.body.appendChild(s);
+    </script> 
+    
     <h1>Buy the thing!</h1>
     
     <form action="" >
